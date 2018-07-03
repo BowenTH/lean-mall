@@ -1,0 +1,7 @@
+organization=jysperm-github
+projectKey=leanengine-node-sdk
+serverUrl=https://sonarcloud.io
+serverVersion=7.1.1.10702
+dashboardUrl=https://sonarcloud.io/dashboard/index/leanengine-node-sdk
+ceTaskId=AWMFN3zlXhRh5gha-DZN
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AWMFN3zlXhRh5gha-DZN
