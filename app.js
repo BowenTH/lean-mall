@@ -26,7 +26,7 @@ app.use(AV.express());
 
 app.enable('trust proxy');
 // 需要重定向到 HTTPS 可去除下一行的注释。
-// app.use(AV.Cloud.HttpsRedirect());
+app.use(AV.Cloud.HttpsRedirect());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
