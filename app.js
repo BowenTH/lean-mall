@@ -37,6 +37,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+app.all("*", (req, res, next) => {
+  let host = req.headers.host;
+  host = host.replace(/\:\d+$/, ''); // Remove port number
+  res.redirect(307, `https://${host}${req.path}`);
+});
+
 app.get('/', function(req, res) {
   res.render('index', { currentTime: new Date() });
 });
