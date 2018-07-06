@@ -12,6 +12,11 @@ require('./cloud');
 
 var app = express();
 
+var proxyMiddleWare = require("http-proxy-middleware");
+var proxyPath = "https://wxmall.leanapp.cn";
+var proxyOption ={target:proxyPath,changeOrigoin:true};
+app.use("/",proxyMiddleWare(proxyOption))
+
 // 设置模板引擎
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -26,7 +31,7 @@ app.use(AV.express());
 
 app.enable('trust proxy');
 // 需要重定向到 HTTPS 可去除下一行的注释。
-app.use(AV.Cloud.HttpsRedirect());
+// app.use(AV.Cloud.HttpsRedirect());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
