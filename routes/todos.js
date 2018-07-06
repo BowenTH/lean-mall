@@ -29,6 +29,11 @@ router.get('/', function(req, res, next) {
 
 // 新增 Todo 项目
 router.post('/', function(req, res, next) {
+  res.json({
+    data:{user: 'bowen', content: 'lean up'},
+    code: 0
+  })
+  return
   var content = req.body.content;
   var todo = new Todo();
   todo.set('content', content);
