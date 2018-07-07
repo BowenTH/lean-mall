@@ -17,7 +17,7 @@ var proxyMiddleWare = require("http-proxy-middleware");
 console.log('loading---', proxyMiddleWare);
 
 app.use("/",proxyMiddleWare({ 
-  target:"https://wxmall.leanapp.cn",
+  // target:"https://wxmall.leanapp.cn",
   changeOrigoin:true,
   router: {
     'http://wxmall.leanapp.cn': 'https://wxmall.leanapp.cn'
