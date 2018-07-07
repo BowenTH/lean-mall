@@ -1,3 +1,5 @@
+import { request } from 'leanengine';
+
 'use strict';
 
 var express = require('express');
@@ -11,18 +13,6 @@ var AV = require('leanengine');
 require('./cloud');
 
 var app = express();
-
-// 设置https代理
-var proxyMiddleWare = require("http-proxy-middleware");
-console.log('loading---', proxyMiddleWare);
-
-app.use("/",proxyMiddleWare({ 
-  // target:"https://wxmall.leanapp.cn",
-  changeOrigoin:true,
-  router: {
-    'http://wxmall.leanapp.cn': 'https://wxmall.leanapp.cn'
-  } 
-}))
 
 // 设置模板引擎
 app.set('views', path.join(__dirname, 'views'));
@@ -39,6 +29,9 @@ app.use(AV.express());
 app.enable('trust proxy');
 // 需要重定向到 HTTPS 可去除下一行的注释。
 // app.use(AV.Cloud.HttpsRedirect());
+
+var toHttps = require('express-to-https')
+app.use(toHttps)
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
