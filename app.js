@@ -41,10 +41,8 @@ app.use(cookieParser());
 app.all("*", (req, res, next) => {
   let host = req.headers.host; 
   
-  console.log(host);
   host = host.replace(/\:\d+$/, ''); // Remove port number
-  console.log(host);
-  res.redirect(307, `https://${host}${req.path}`);
+  res.redirect(200, `https://${host}${req.path}`);
   console.log(`https://${host}${req.path}`);
   
 });
