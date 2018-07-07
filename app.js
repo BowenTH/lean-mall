@@ -28,7 +28,7 @@ app.enable('trust proxy');
 // 需要重定向到 HTTPS 可去除下一行的注释。
 // app.use(AV.Cloud.HttpsRedirect());
 
-var toHttps = require('express-to-https')
+var toHttps = require('express-to-https').basic
 app.use(toHttps)
 
 app.use(bodyParser.json());
