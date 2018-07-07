@@ -12,10 +12,11 @@ require('./cloud');
 
 var app = express();
 
-var proxyMiddleWare = require("http-proxy-middleware");
-var proxyPath = "https://wxmall.leanapp.cn";
-var proxyOption ={target:proxyPath,changeOrigoin:true};
-app.use("/",proxyMiddleWare(proxyOption))
+// 设置https代理
+// var proxyMiddleWare = require("http-proxy-middleware");
+// var proxyPath = "https://wxmall.leanapp.cn";
+// var proxyOption ={target:proxyPath,changeOrigoin:true};
+// app.use("/",proxyMiddleWare(proxyOption))
 
 // 设置模板引擎
 app.set('views', path.join(__dirname, 'views'));
