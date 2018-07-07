@@ -38,9 +38,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.all("*", (req, res, next) => {
-  let host = req.headers.host;
+  let host = req.headers.host; 
+  
+  console.log(host);
   host = host.replace(/\:\d+$/, ''); // Remove port number
+  console.log(host);
   res.redirect(307, `https://${host}${req.path}`);
+  console.log(`https://${host}${req.path}`);
+  
 });
 
 app.get('/', function(req, res) {
