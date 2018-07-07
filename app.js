@@ -1,5 +1,3 @@
-import { request } from 'leanengine';
-
 'use strict';
 
 var express = require('express');
