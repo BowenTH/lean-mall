@@ -13,10 +13,16 @@ require('./cloud');
 var app = express();
 
 // 设置https代理
-// var proxyMiddleWare = require("http-proxy-middleware");
-// var proxyPath = "https://wxmall.leanapp.cn";
-// var proxyOption ={target:proxyPath,changeOrigoin:true};
-// app.use("/",proxyMiddleWare(proxyOption))
+var proxyMiddleWare = require("http-proxy-middleware");
+console.log('loading---', proxyMiddleWare);
+
+app.use("/",proxyMiddleWare({ 
+  target:"https://wxmall.leanapp.cn",
+  changeOrigoin:true,
+  router: {
+    'http://wxmall.leanapp.cn': 'https://wxmall.leanapp.cn'
+  } 
+}))
 
 // 设置模板引擎
 app.set('views', path.join(__dirname, 'views'));
@@ -37,15 +43,6 @@ app.enable('trust proxy');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-
-app.all("*", (req, res, next) => {
-  let host = req.headers.host; 
-  
-  host = host.replace(/\:\d+$/, ''); // Remove port number
-  res.redirect(200, `https://${host}${req.path}`);
-  console.log(`https://${host}${req.path}`);
-  
-});
 
 app.get('/', function(req, res) {
   res.render('index', { currentTime: new Date() });
