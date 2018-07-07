@@ -1,0 +1,56 @@
+{
+  "_from": "wxjssdkconfig",
+  "_id": "wxjssdkconfig@0.0.5",
+  "_inBundle": false,
+  "_integrity": "sha1-DSlzCbbCzlKzpCKbcGgjr20oRyU=",
+  "_location": "/wxjssdkconfig",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "wxjssdkconfig",
+    "name": "wxjssdkconfig",
+    "escapedName": "wxjssdkconfig",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/wxjssdkconfig/-/wxjssdkconfig-0.0.5.tgz",
+  "_shasum": "0d297309b6c2ce52b3a4229b706823af6d284725",
+  "_spec": "wxjssdkconfig",
+  "_where": "/Users/yyy/work-yyy/sourceTree/spaceX/wx-develop/php",
+  "author": {
+    "name": "maxingchi"
+  },
+  "bugs": {
+    "url": "https://github.com/maxingchi/weixinJsSdkConfig/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "jssha": "^1.5.0",
+    "request": "^2.51.0"
+  },
+  "deprecated": false,
+  "description": "weixin js sdk signature",
+  "homepage": "https://github.com/maxingchi/weixinJsSdkConfig#readme",
+  "keywords": [
+    "weixin",
+    "jssdk",
+    "signature"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "wxjssdkconfig",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxingchi/weixinJsSdkConfig.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.5"
+}

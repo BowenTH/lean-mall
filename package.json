@@ -16,7 +16,8 @@
     "express": "4.12.3",
     "express-to-https": "^1.0.3",
     "leancloud-storage": "^3.0.0",
-    "leanengine": "^3.0.0"
+    "leanengine": "^3.0.0",
+    "wxjssdkconfig": "0.0.5"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"

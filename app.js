@@ -28,8 +28,9 @@ app.enable('trust proxy');
 // 需要重定向到 HTTPS 可去除下一行的注释。
 // app.use(AV.Cloud.HttpsRedirect());
 
-var toHttps = require('express-to-https').basic
-app.use(toHttps)
+// 传说能把http转换为https，然并卵
+// var toHttps = require('express-to-https').basic
+// app.use(toHttps)
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -41,6 +42,12 @@ app.get('/', function(req, res) {
 
 // 可以将一类的路由单独保存在一个文件中
 app.use('/todos', require('./routes/todos'));
+
+// 微信公众号配置路由
+
+// 公众号消息
+var wxRouter = require('./routes/wx');
+app.use('/wx', wxRouter);
 
 app.use(function(req, res, next) {
   // 如果任何一个路由都没有返回响应，则抛出一个 404 异常给后续的异常处理器
