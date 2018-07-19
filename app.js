@@ -1,7 +1,7 @@
 'use strict';
 
-import express from 'express'
-// var express = require('express');
+// import express from 'express'
+var express = require('express');
 var timeout = require('connect-timeout');
 var path = require('path');
 var cookieParser = require('cookie-parser');
